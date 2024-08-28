@@ -1,9 +1,8 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:boilerplate_flutter/component/route/routers.gr.dart';
 import 'package:flutter/material.dart';
-
-import '../../component/route/routers.gr.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -14,7 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => context.popRoute(),
+          onPressed: () => context.maybePop(),
           icon: Icon(
             Platform.isIOS ? Icons.arrow_back_ios : Icons.arrow_back,
           ),

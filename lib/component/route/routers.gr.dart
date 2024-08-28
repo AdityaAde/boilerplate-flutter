@@ -10,55 +10,28 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:boilerplate_flutter/component/route/wrapper/home_wrapper.dart'
-    as _i1;
-import 'package:boilerplate_flutter/modules/account/account_page.dart' as _i3;
+    as _i3;
+import 'package:boilerplate_flutter/modules/account/account_page.dart' as _i1;
 import 'package:boilerplate_flutter/modules/home/home_page.dart' as _i2;
 import 'package:boilerplate_flutter/modules/welcome/welcome_screen.dart' as _i4;
 
-abstract class $AppRouter extends _i5.RootStackRouter {
-  $AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, _i5.PageFactory> pagesMap = {
-    HomeWrapper.name: (routeData) {
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i5.WrappedRoute(child: const _i1.HomeWrapper()),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i2.HomePage(),
-      );
-    },
-    AccountRoute.name: (routeData) {
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i3.AccountPage(),
-      );
-    },
-    WelcomeRoute.name: (routeData) {
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i4.WelcomePage(),
-      );
-    },
-  };
-}
-
 /// generated route for
-/// [_i1.HomeWrapper]
-class HomeWrapper extends _i5.PageRouteInfo<void> {
-  const HomeWrapper({List<_i5.PageRouteInfo>? children})
+/// [_i1.AccountPage]
+class AccountRoute extends _i5.PageRouteInfo<void> {
+  const AccountRoute({List<_i5.PageRouteInfo>? children})
       : super(
-          HomeWrapper.name,
+          AccountRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeWrapper';
+  static const String name = 'AccountRoute';
 
-  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+  static _i5.PageInfo page = _i5.PageInfo(
+    name,
+    builder: (data) {
+      return const _i1.AccountPage();
+    },
+  );
 }
 
 /// generated route for
@@ -72,21 +45,31 @@ class HomeRoute extends _i5.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+  static _i5.PageInfo page = _i5.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.HomePage();
+    },
+  );
 }
 
 /// generated route for
-/// [_i3.AccountPage]
-class AccountRoute extends _i5.PageRouteInfo<void> {
-  const AccountRoute({List<_i5.PageRouteInfo>? children})
+/// [_i3.HomeWrapper]
+class HomeWrapper extends _i5.PageRouteInfo<void> {
+  const HomeWrapper({List<_i5.PageRouteInfo>? children})
       : super(
-          AccountRoute.name,
+          HomeWrapper.name,
           initialChildren: children,
         );
 
-  static const String name = 'AccountRoute';
+  static const String name = 'HomeWrapper';
 
-  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+  static _i5.PageInfo page = _i5.PageInfo(
+    name,
+    builder: (data) {
+      return _i5.WrappedRoute(child: const _i3.HomeWrapper());
+    },
+  );
 }
 
 /// generated route for
@@ -100,5 +83,10 @@ class WelcomeRoute extends _i5.PageRouteInfo<void> {
 
   static const String name = 'WelcomeRoute';
 
-  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+  static _i5.PageInfo page = _i5.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.WelcomePage();
+    },
+  );
 }
