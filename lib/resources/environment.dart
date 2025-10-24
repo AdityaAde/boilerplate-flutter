@@ -18,7 +18,7 @@ class Environment {
   factory Environment.dev() {
     env = Environment(
       name: 'development',
-      baseUrl: '',
+      baseUrl: 'https://jsonplaceholder.typicode.com',
       authBaseUrl: '',
       connectionTimeout: 60000,
       receiveTimeout: 60000,
@@ -29,7 +29,7 @@ class Environment {
   factory Environment.prod() {
     env = Environment(
       name: 'production',
-      baseUrl: '',
+      baseUrl: 'https://jsonplaceholder.typicode.com',
       authBaseUrl: '',
       connectionTimeout: 60000,
       receiveTimeout: 60000,

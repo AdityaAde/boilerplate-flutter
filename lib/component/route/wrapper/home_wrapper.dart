@@ -16,8 +16,15 @@ class HomeWrapper extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<TestCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<TestCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<PostsCubit>()..fetchPosts(),
+        ),
+      ],
       child: this,
     );
   }

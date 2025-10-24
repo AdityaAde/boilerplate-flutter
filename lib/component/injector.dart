@@ -4,6 +4,7 @@ import '../data/local/secure_key_dao.dart';
 import '../data/remote/base_service.dart';
 import '../extensions/extension.dart';
 import '../modules/modules.dart';
+import '../repositories/repositories.dart';
 import 'dao_storage.dart';
 
 final getIt = GetIt.instance;
@@ -38,7 +39,9 @@ class Injector {
   }
 
   void _onRegisterRepository() {
-    // Register repository here
+    getIt.registerLazySingleton<PostRepository>(
+      () => PostRepositoryImpl(getIt()),
+    );
   }
 
   void _onRegisterCache() {
@@ -46,6 +49,7 @@ class Injector {
   }
 
   void _onBusinnessLogic() {
-    getIt.registerLazySingleton(() => TestCubit.create());
+    getIt.registerLazySingleton<TestCubit>(() => TestCubit.create());
+    getIt.registerFactory<PostsCubit>(() => PostsCubit(getIt()));
   }
 }
